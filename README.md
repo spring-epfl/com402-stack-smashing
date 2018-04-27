@@ -50,3 +50,7 @@ If you are using **_VirtualBox_**, you have two options:
 1. Keep operating in NAT mode. In this case, you will need to do port forwarding to be able to SSH into the guest OS. Your bestest friend Google can help you with setting up the port forwarding.
 
 2. Change the network operation mode to **_Bridged Adapter_** from the VM settings. Once you change it, the instructions for using SSH are same as those above.
+
+## Acknowledgements
+
+This assignment is based in part on materials from Prof. Hovav Shacham at UC San Diego, Prof. Dan Boneh at Stanford and Adam Everspaugh at UW Madison. Thanks for their hard work.
