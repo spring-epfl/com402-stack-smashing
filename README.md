@@ -25,31 +25,26 @@ configured with Debian Lenny that has the address space layout randomization
 
 #### Networking
 
-Sometimes accessing the VM via SSH is easier (copy-paste may work better, and you can transfer files both way using the `scp` command). The images we provide use the Network Address Translation (NAT) networking mode by default.
+It's most convenient to access the VM via SSH (copy-paste works better, and you can transfer files both way using the `scp` command). The images we provide use the Network Address Translation (NAT) networking mode by default.
 
-If you are using **_VMWare_**: start up the VM, login as user or root, and find the IP address of the guest OS using the command:
+To use SSH, you need to do the following steps:
+ * Open the settings of your image
+ * Go to the "Networking" panel
+ * Choose "Advanced" and click on the "Port forwarding button"
+ * Add a forwarding rule (green plus button on the side)
+ * In the forwarding rule, leave IP addresses empty, set **Host IP** to _2222_, and **Guest IP** to 22 (the default SSH port)
+ * Restart the virtual machine
 
-`sbin/ifconfig`
+Now, you can connect your virtual machine via ssh:
+`ssh -p 2222 user@127.0.0.1`
 
-The address you need is the **_inet addr_** that is **NOT** assigned to the loopback. Assuming that the IP address is `192.168.115.128`, you can:
+This is how you copy files _TO_ the VM:
 
-Connect to the guest OS via SSH:
-
-`ssh user@192.168.115.128`
-
-Copy files _TO_ the VM:
-
-`scp <path_to_copy_from_on_host_OS> user@192.168.115.128:<path_to_copy_to_on_guest_OS>`
+`scp -P 2222 <path_to_copy_from_on_host_OS> user@127.0.0.1:<path_to_copy_to_on_guest_OS>`
 
 Copy files _FROM_ the VM:
 
-`scp user@192.168.115.128:<path_to_copy_from_on_guest_OS> <path_to_copy_to_on_host_OS> `
-
-If you are using **_VirtualBox_**, you have two options:
-
-1. Keep operating in NAT mode. In this case, you will need to do port forwarding to be able to SSH into the guest OS. Your bestest friend Google can help you with setting up the port forwarding.
-
-2. Change the network operation mode to **_Bridged Adapter_** from the VM settings. Once you change it, the instructions for using SSH are same as those above.
+`scp -P 2222 user@127.0.0.1:<path_to_copy_from_on_guest_OS> <path_to_copy_to_on_host_OS> `
 
 ## Acknowledgements
 
