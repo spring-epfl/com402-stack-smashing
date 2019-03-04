@@ -30,20 +30,18 @@ It's most convenient to access the VM via SSH (copy-paste works better, and you 
 To use SSH, you need to do the following steps:
  * Open the settings of your image
  * Go to the "Networking" panel
- * Choose "Advanced" and click on the "Port forwarding button"
- * Add a forwarding rule (green plus button on the side)
+ * Choose "Advanced" and click on the "Port forwarding" button
+ * Add a forwarding rule (green "plus" button on the side)
  * In the forwarding rule, leave IP addresses empty, set **Host IP** to _2222_, and **Guest IP** to 22 (the default SSH port)
  * Restart the virtual machine
 
-Now, you can connect your virtual machine via ssh:
+Now, you can connect to your virtual machine via ssh:
 `ssh -p 2222 user@127.0.0.1`
 
 This is how you copy files _TO_ the VM:
-
 `scp -P 2222 <path_to_copy_from_on_host_OS> user@127.0.0.1:<path_to_copy_to_on_guest_OS>`
 
 Copy files _FROM_ the VM:
-
 `scp -P 2222 user@127.0.0.1:<path_to_copy_from_on_guest_OS> <path_to_copy_to_on_host_OS> `
 
 ## Acknowledgements
