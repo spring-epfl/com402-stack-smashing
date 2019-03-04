@@ -1,4 +1,4 @@
-# COM402 Homework 5 - Exercise 1: Stack Smashing  
+# COM402 Homework 1 - Exercise 5: Stack Smashing  
 
 The goal of this exercise is to gain hands-on experience with the effects of
 buffer overflows and other memory-safety bugs. Your goal is to understand the
