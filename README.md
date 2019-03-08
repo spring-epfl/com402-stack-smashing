@@ -27,7 +27,7 @@ configured with Debian Lenny that has the address space layout randomization
 
 It's most convenient to access the VM via SSH (copy-paste works better, and you can transfer files both way using the `scp` command). The images we provide use the Network Address Translation (NAT) networking mode by default.
 
-To use SSH, you need to do the following steps:
+If you're using _VirtualBox_, for example, you need to do the following steps to set up NAT networking:
  * Open the settings of your image
  * Go to the "Networking" panel
  * Choose "Advanced" and click on the "Port forwarding" button
