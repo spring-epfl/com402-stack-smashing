@@ -32,7 +32,7 @@ If you're using _VirtualBox_, for example, you need to do the following steps to
  * Go to the "Networking" panel
  * Choose "Advanced" and click on the "Port forwarding" button
  * Add a forwarding rule (green "plus" button on the side)
- * In the forwarding rule, leave IP addresses empty, set **Host IP** to _2222_, and **Guest IP** to 22 (the default SSH port)
+ * In the forwarding rule, leave IP addresses empty, set **Host port** to _2222_, and **Guest port** to 22 (the default SSH port)
  * Restart the virtual machine
 
 Now, you can connect to your virtual machine via ssh:
